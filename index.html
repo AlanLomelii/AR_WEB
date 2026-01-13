@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Portafolio - GitHub Pages</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+            overflow: hidden;
+        }
+
+        #vanta-bg {
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .page {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.55);
+            padding: 40px;
+            border-radius: 14px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            display: none;
+            min-width: 280px;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            width: 200px;
+            padding: 12px;
+            margin: 8px auto;
+            border: none;
+            border-radius: 8px;
+            background-color: #00d4ff;
+            font-size: 16px;
+            cursor: pointer;
+            display: block;
+        }
+
+        .btn:hover {
+            background-color: #00aacc;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Fondo -->
+    <div id="vanta-bg"></div>
+
+    <!-- Página principal -->
+    <div id="mainPage" class="page active">
+        <h1>Equipo:</h1>
+        <h3>Diego Omar Silva Valladares</h3>
+        <h3>Lomeli Arce Alan Yamir</h3>
+        <p>AR_WEB evidencias</p>
+        <button class="btn" onclick="goToTrabajos()">Ir a Trabajos</button>
+    </div>
+
+    <!-- Página trabajos -->
+    <div id="trabajosPage" class="page">
+        <h1>📂 Trabajos</h1>
+
+        <button class="btn">??? 1</button>
+        <button class="btn">??? 2</button>
+        <button class="btn">??? 3</button>
+
+        <button class="btn" onclick="goToMain()">Main</button>
+    </div>
+
+    <!-- Librerías -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+
+    <!-- VANTA -->
+    <script>
+        VANTA.NET({
+            el: "#vanta-bg",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200,
+            minWidth: 200,
+            scale: 1,
+            scaleMobile: 1
+        });
+    </script>
+
+    <!-- Navegación -->
+    <script>
+        function goToTrabajos() {
+            document.getElementById("mainPage").classList.remove("active");
+            document.getElementById("trabajosPage").classList.add("active");
+        }
+
+        function goToMain() {
+            document.getElementById("trabajosPage").classList.remove("active");
+            document.getElementById("mainPage").classList.add("active");
+        }
+    </script>
+
+</body>
+</html>
+
+
