@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>modelo base</title>
+    <style>
+        body{
+            margin: 0;
+            overflow: hidden;
+            font-family: Arial;
+        }
+        /*generamos el panel de usuario*/
+        #panel{
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.5); /* FIX */
+            border-radius: 12px;
+            width: 200px;
+            color: white;
+        }
+        #panel label{
+            font-size: 16px;
+            margin-top: 5px;
+        }
+        #panel input, #panel button{
+            width: 100%;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Panel UI -->
+    <div id="panel">
+        <label>Color de cubos</label>
+        <input type="color" id="cuboColor" value="#FFFFFF">
+
+        <label>Luces</label>
+        <input type="range" id="pointLight" min="0" max="3" step="0.1" value="1">
+
+        <label>Animación</label>
+        <button id="rotate">Desactivar/Activar</button>
+    </div>
+
+    <!-- THREE.js -->
+    <script src="js/three.min.js"></script>
+    <script src="js/GLTFLoader.js"></script>
+
+    <!-- Script principal -->
+    <script src="apps/newmodel.js"></script>
+
+</body>
+</html>
